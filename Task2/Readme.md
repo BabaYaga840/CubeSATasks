@@ -1,3 +1,6 @@
+<h1>Calculations</h1>
+<img width="527" alt="Screenshot 2023-06-22 at 1 28 06 AM" src="https://github.com/BabaYaga840/CubeSATasks/assets/104863253/0295b0fd-285b-4171-a648-a58aa92470a6">
+
 <h1>Square Wave</h1>
 <h2>Curcuit</h2>
 
