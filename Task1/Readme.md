@@ -25,3 +25,43 @@
 -For example a CD where data in one position cannot be moved to another position (could happen in other cases if data is lost in between and the “reciever” reads it instead of the lost data). [Not sure if this happens in practice, just an intuition based on the algorithm].
 
 -Another possible problem would be when e and f are decimals where only the integer would get passed.
+
+Also by placing the packets at different positions on the “disc” we can prevent burst errors.
+
+
+<h2>Reed Solomons</h2>
+Time complexity is O(n log n) for encoding and decoding, and space complexity is O(n)
+Maximum error correction capability is typically (n-k)/2, where n is the block size and k is the number of data symbols.
+Introduces a higher redundancy overhead, with the number of additional parity symbols typically equal to the desired error correction capability.
+Performs well with burst errors and random errors, widely used in applications such as data storage, satellite communication, and digital broadcasting.
+
+<h2>Hamming  Code</h2>
+Time complexity is O(n) for encoding and decoding, and space complexity is O(n) 
+Designed for single-bit error correction. Can detect but not correct multiple errors.
+Adds a smaller redundancy overhead, requiring only a few parity bits.
+More suitable for applications with a higher likelihood of single-bit errors, such as computer memory systems and communication channels with relatively low error rates.
+
+<h2>Cyclic Redundancy Check (CRC)</h2>
+
+CRC methodology: Divide code to be sent by another number that will be known by the receiver side and append the remainder to the code.
+If the received message gives zero remainder when divided by the above referenced number it has no errors/
+
+CRC has low computational complexity with a time complexity of O(n) for encoding and decoding. The space complexity is minimal as it requires a small amount of additional storage for the CRC bits.
+CRC is not an error correction algorithm but a method for error detection.
+CRC has a minimal redundancy overhead as it appends a fixed-size checksum (CRC bits) to the data.
+
+<h2>Turbo Codes</h2>
+Turbo codes have higher computational complexity than Reed-Solomon and Hamming codes, with time complexity depending on the specific implementation. Space complexity can be higher than O(n).
+Turbo codes can handle a higher number of errors compared to Reed-Solomon and Hamming codes, achieving near-Shannon limit performance.
+Excel in scenarios with higher error rates and various error patterns. Commonly used in wireless communication systems and data transmission over noisy channels.
+
+<h4>Final use cases</h4>
+
+Reed-Solomon codes are commonly used in storage systems such as hard drives, solid-state drives (SSDs), and optical media and digital broadcasting.
+
+Hamming codes are widely used in computer memory systems, such as RAM (random access memory) and ECC (error-correcting code) modules and low-error-rate communication channels, such as LANs.
+
+Turbo codes have been employed in deep space missions by space agencies like NASA and ESA and  in wireless communication systems, including cellular networks (3G, 4G, and 5G).
+
+CRC is often used for file integrity checks.
+
