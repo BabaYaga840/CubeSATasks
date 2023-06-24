@@ -3,6 +3,7 @@ import numpy as np
 read = open("encoded.txt","r")
 write = open("reconciled_message.txt","a")
 errors=0
+perror=0
 def getHmat():
     G=np.ones((7,3),int)
     for i in range(3):
@@ -29,7 +30,8 @@ for i in range(25000):
     D=M[:4]#np.array(M[i] for i in range(4))
     #print(D)
     S=np.array([modt(x) for x in S])
-
+    if S[0]==0 and S[1]==0 and S[2]==0:
+        perror=perror+1
     if S[0]==0:
         if S[1]*S[2]:
             D[0]=1-D[0]
@@ -50,5 +52,6 @@ for i in range(25000):
     a=a+7
     read.seek(a)
 print("bit error rate:", errors/100000)
+print("bit error rate considering parity bits:", perror/175000)
 read.close()
 write.close()
