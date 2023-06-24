@@ -1,7 +1,7 @@
 import numpy as np
 
-read = open("write.txt","r")
-write = open("decoded.txt","a")
+read = open("encoded.txt","r")
+write = open("reconciled_message.txt","a")
 
 def getHmat():
     G=np.ones((7,3),int)
@@ -27,7 +27,7 @@ for i in range(25000):
     modt=lambda t: t%2
     S=M.dot(H)
     D=M[:4]#np.array(M[i] for i in range(4))
-    print(D)
+    #print(D)
     S=np.array([modt(x) for x in S])
 
     if S[0]==0:
