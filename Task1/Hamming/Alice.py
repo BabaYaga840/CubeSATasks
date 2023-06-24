@@ -1,7 +1,7 @@
 import numpy as np
 
-read = open("file.txt","r")
-write = open("write.txt","a")
+read = open("input.txt","r")
+write = open("encoded.txt","a")
 
 a=0
 
